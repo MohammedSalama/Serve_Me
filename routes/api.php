@@ -29,6 +29,15 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     /**
      * Route Slider Api
      */
+    Route::get('serve/{id}',[\App\Http\Controllers\Api\ServeController::class,'show']);
+    Route::patch('serve/{id}',[\App\Http\Controllers\Api\ServeController::class,'update']);
+    Route::delete('serve/{id}',[\App\Http\Controllers\Api\ServeController::class,'delete']);
+    Route::post('serve',[\App\Http\Controllers\Api\ServeController::class,'create']);
+    Route::get('/serve',[\App\Http\Controllers\Api\ServeController::class,'index']);
+
+    /**
+     * Route Slider Api
+     */
     Route::get('slider/{id}',[\App\Http\Controllers\Api\SliderController::class,'show']);
     Route::patch('slider/{id}',[\App\Http\Controllers\Api\SliderController::class,'update']);
     Route::delete('slider/{id}',[\App\Http\Controllers\Api\SliderController::class,'delete']);
